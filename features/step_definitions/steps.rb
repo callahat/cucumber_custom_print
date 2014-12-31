@@ -18,3 +18,7 @@ Then /^I record results with custom formatting$/ do
   puts "Custom method for writing information to the report (pretty formatter will show nothing - this method isn't added):"
   put_collapsible_list "Google results", @browser.h3s(:class => "r").map(&:text)
 end
+
+Then /^I tally up the number of results$/ do
+  puts "<b>#{@browser.h3s(:class => "r").size}</b> results"
+end
